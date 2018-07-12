@@ -1,0 +1,3094 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>analysis</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1504.81">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; line-height: 17.0px; font: 14.0px Courier; color: #303f9f; -webkit-text-stroke: #303f9f; min-height: 17.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; line-height: 17.0px; font: 14.0px Courier; color: #303f9f; -webkit-text-stroke: #303f9f}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #008000; -webkit-text-stroke: #008000; background-color: #f7f7f7}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #0000ff; -webkit-text-stroke: #0000ff; background-color: #f7f7f7}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 20.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #333333; -webkit-text-stroke: #333333; background-color: #f7f7f7}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #333333; -webkit-text-stroke: #333333; background-color: #f7f7f7; min-height: 17.0px}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; line-height: 17.0px; font: 14.0px Courier; color: #d84315; -webkit-text-stroke: #d84315}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; line-height: 20.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000; min-height: 17.0px}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; line-height: 20.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #ba2121; -webkit-text-stroke: #ba2121; background-color: #f7f7f7}
+    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; line-height: 17.0px; font: 14.0px Courier; color: #000000; -webkit-text-stroke: #000000; min-height: 17.0px}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #000000; -webkit-text-stroke: #000000; background-color: #ffffff}
+    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #000000; -webkit-text-stroke: #000000}
+    p.p19 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 20.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000; min-height: 16.0px}
+    li.li7 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 20.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.s2 {font-kerning: none; background-color: #ffffff}
+    span.s3 {font-kerning: none; color: #337ab7; background-color: #ffffff; -webkit-text-stroke: 0px #337ab7}
+    span.s4 {font-kerning: none; color: #333333; -webkit-text-stroke: 0px #333333}
+    span.s5 {font-kerning: none; color: #0000ff; -webkit-text-stroke: 0px #0000ff}
+    span.s6 {font-kerning: none; color: #008000; -webkit-text-stroke: 0px #008000}
+    span.s7 {font-kerning: none; color: #666666; -webkit-text-stroke: 0px #666666}
+    span.s8 {font-kerning: none; color: #ba2121; -webkit-text-stroke: 0px #ba2121}
+    span.s9 {font-kerning: none; color: #aa22ff; -webkit-text-stroke: 0px #aa22ff}
+    span.s10 {background-color: #ffffff; -webkit-text-stroke: 0px #000000}
+    table.t1 {margin: 14.0px 0.0px 0.0px 0.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; border-collapse: collapse}
+    td.td1 {width: 47.1px; margin: 14.0px 28.0px 14.0px 28.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 4.0px 4.0px 4.0px 4.0px}
+    td.td2 {width: 90.7px; margin: 14.0px 28.0px 14.0px 28.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 4.0px 4.0px 4.0px 4.0px}
+    td.td3 {width: 20.7px; margin: 14.0px 28.0px 14.0px 28.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 4.0px 4.0px 4.0px 4.0px}
+    td.td4 {width: 77.2px; margin: 14.0px 28.0px 14.0px 28.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 4.0px 4.0px 4.0px 4.0px}
+    td.td5 {width: 72.8px; margin: 14.0px 28.0px 14.0px 28.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 4.0px 4.0px 4.0px 4.0px}
+    td.td6 {width: 76.7px; margin: 14.0px 28.0px 14.0px 28.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 4.0px 4.0px 4.0px 4.0px}
+    ul.ul1 {list-style-type: disc}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<h1 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 25.0px; font: 26.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>Analysis</b></span><span class="s3"><b>¶</b></span></h1>
+<p class="p3"><span class="s2">In [1]:</span></p>
+<p class="p4"><span class="s1"><b>import</b></span><span class="s4"> </span><span class="s5"><b>numpy</b></span><span class="s4"> </span><span class="s1"><b>as</b></span><span class="s4"> </span><span class="s5"><b>np</b></span></p>
+<p class="p4"><span class="s1"><b>import</b></span><span class="s4"> </span><span class="s5"><b>pandas</b></span><span class="s4"> </span><span class="s1"><b>as</b></span><span class="s4"> </span><span class="s5"><b>pd</b></span></p>
+<p class="p5"><span class="s6"><b>import</b></span><span class="s4"> </span><span class="s1"><b>sklearn</b></span></p>
+<p class="p5"><span class="s6"><b>import</b></span><span class="s4"> </span><span class="s1"><b>matplotlib.pyplot</b></span><span class="s4"> </span><span class="s6"><b>as</b></span><span class="s4"> </span><span class="s1"><b>plt</b></span></p>
+<p class="p4"><span class="s7">%</span><span class="s1"><b>matplotlib</b></span><span class="s4"> inline</span></p>
+<p class="p5"><span class="s6"><b>import</b></span><span class="s4"> </span><span class="s1"><b>seaborn</b></span><span class="s4"> </span><span class="s6"><b>as</b></span><span class="s4"> </span><span class="s1"><b>sns</b></span></p>
+<p class="p5"><span class="s6"><b>from</b></span><span class="s4"> </span><span class="s1"><b>sklearn.decomposition</b></span><span class="s4"> </span><span class="s6"><b>import</b></span><span class="s4"> PCA</span></p>
+<p class="p5"><span class="s6"><b>from</b></span><span class="s4"> </span><span class="s1"><b>sklearn.manifold</b></span><span class="s4"> </span><span class="s6"><b>import</b></span><span class="s4"> Isomap</span></p>
+<p class="p5"><span class="s6"><b>from</b></span><span class="s4"> </span><span class="s1"><b>mpl_toolkits.mplot3d</b></span><span class="s4"> </span><span class="s6"><b>import</b></span><span class="s4"> Axes3D</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 22.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>Load and Explore Data</b></span><span class="s3"><b>¶</b></span></h2>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">Let's load our two seperate datasets, <b>data_big</b> and <b>data_small</b>, and get a sense for their structure and dispersion.</span></p>
+<p class="p3"><span class="s2">In [21]:</span></p>
+<p class="p8"><span class="s1">data_big </span><span class="s7">=</span><span class="s1"> pd</span><span class="s7">.</span><span class="s1">read_csv(</span><span class="s8">'data_big.csv'</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1">data_small </span><span class="s7">=</span><span class="s1"> pd</span><span class="s7">.</span><span class="s1">read_csv(</span><span class="s8">'data_small.csv'</span><span class="s1">)</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1">X_big </span><span class="s7">=</span><span class="s1"> data_big</span><span class="s7">.</span><span class="s1">drop(</span><span class="s8">'Allstar'</span><span class="s1">, axis</span><span class="s7">=1</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1">X_small </span><span class="s7">=</span><span class="s1"> data_small</span><span class="s7">.</span><span class="s1">drop(</span><span class="s8">'Allstar'</span><span class="s1">, axis</span><span class="s7">=1</span><span class="s1">)</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1">y </span><span class="s7">=</span><span class="s1"> data_big[</span><span class="s8">'Allstar'</span><span class="s1">]</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1">data_big</span><span class="s7">.</span><span class="s1">describe()</span></p>
+<p class="p10"><span class="s2">Out[21]:</span></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p11"><span class="s1"><b></b></span><br></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>Unnamed: 0</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>Age</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>G</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>GS</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>MP</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>3PAr</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>FTr</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>AST%</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>STL%</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>BLK%</b></span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p12"><span class="s2"><b>...</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>FTA</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>FT%</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>AST</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>STL</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>BLK</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>TOV</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>Popularity</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>C</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>PPG</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p12"><span class="s2"><b>Allstar</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td1">
+        <p class="p7"><span class="s2"><b>count</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1819.000000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td1">
+        <p class="p7"><span class="s2"><b>mean</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1346.131941</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">26.552501</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">58.130291</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">29.515118</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1392.074217</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.301183</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.264977</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">13.976855</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1.635349</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1.479659</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">134.170423</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.745145</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">132.376031</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">45.632216</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">26.527763</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">79.735019</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">406.997801</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.145684</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">9.185739</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.056075</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td1">
+        <p class="p7"><span class="s2"><b>std</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">808.286508</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">4.370980</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">22.215394</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">30.131380</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">837.753094</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.201844</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.141050</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">9.278569</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.732837</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1.396855</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">132.497428</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.126153</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">138.261146</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">35.006655</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">31.972205</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">63.305249</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">413.020253</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.352887</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">5.818649</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.230129</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td1">
+        <p class="p7"><span class="s2"><b>min</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">19.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">7.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.001000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.032000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td1">
+        <p class="p7"><span class="s2"><b>25%</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">641.500000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">23.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">43.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">2.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">660.500000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.132000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.172500</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">7.300000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1.200000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.500000</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">38.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.686500</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">36.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">18.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">6.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">31.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">117.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">4.685000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td1">
+        <p class="p7"><span class="s2"><b>50%</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1327.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">26.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">66.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">16.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1400.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.306000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.242000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">10.900000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1.500000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">94.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.765000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">88.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">39.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">16.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">66.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">302.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">7.880000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td1">
+        <p class="p7"><span class="s2"><b>75%</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">2065.500000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">29.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">76.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">61.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">2095.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.448500</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.329500</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">18.200000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">2.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">2.000000</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">191.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.825500</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">180.500000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">66.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">34.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">113.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">547.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">12.735000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.000000</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td1">
+        <p class="p7"><span class="s2"><b>max</b></span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">2702.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">40.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">82.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">82.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">3167.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">0.929000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1.500000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">57.300000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">10.300000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">9.700000</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">881.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">906.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">191.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">242.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">464.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">3358.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">32.010000</span></p>
+      </td>
+      <td valign="middle" class="td2">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p7"><span class="s2">8 rows × 26 columns</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 18.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>Class Distribution</b></span><span class="s3"><b>¶</b></span></h3>
+<p class="p3"><span class="s2">In [3]:</span></p>
+<p class="p8"><span class="s6"><b>def</b></span><span class="s1"> </span><span class="s5">getBinaryClassInfo</span><span class="s1">(dataframe, binary_feature):</span></p>
+<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s6">print</span><span class="s4">(</span><span class="s1">'Initial Number of Samples: '</span><span class="s4">, dataframe</span><span class="s7">.</span><span class="s4">shape[</span><span class="s7">0</span><span class="s4">])</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>class_counts </span><span class="s7">=</span><span class="s1"> dataframe[binary_feature]</span><span class="s7">.</span><span class="s1">value_counts()</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>class1_prop </span><span class="s7">=</span><span class="s1"> class_counts[</span><span class="s7">1</span><span class="s1">]</span><span class="s7">/</span><span class="s1">class_counts[</span><span class="s7">0</span><span class="s1">]</span></p>
+<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s6">print</span><span class="s4">(</span><span class="s1">'Percentage of All-Star Samples: '</span><span class="s4">,<span class="Apple-converted-space">  </span></span><span class="s6">round</span><span class="s4">(class1_prop</span><span class="s7">*100</span><span class="s4">, </span><span class="s7">2</span><span class="s4">), </span><span class="s1">'%'</span><span class="s4">)</span></p>
+<p class="p3"><span class="s2">In [4]:</span></p>
+<p class="p8"><span class="s1">plt</span><span class="s7">.</span><span class="s1">figure(figsize</span><span class="s7">=</span><span class="s1">(</span><span class="s7">8</span><span class="s1">,</span><span class="s7">4</span><span class="s1">))</span></p>
+<p class="p8"><span class="s1">sns</span><span class="s7">.</span><span class="s1">countplot(x</span><span class="s7">=</span><span class="s8">'Allstar'</span><span class="s1">, data</span><span class="s7">=</span><span class="s1">data_big, palette</span><span class="s7">=</span><span class="s8">'Paired'</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1">getBinaryClassInfo(data_big, </span><span class="s8">'Allstar'</span><span class="s1">)</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p16"><span class="s1">Initial Number of Samples:<span class="Apple-converted-space">  </span>1819</span></p>
+<p class="p16"><span class="s1">Percentage of All-Star Samples:<span class="Apple-converted-space">  </span>5.94 %</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"><img src="file:///unknown.png" alt="unknown.png"></span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">Our dataset contains over 1,800 samples and around 6% of those samples represent all-star seasons.</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 18.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>Correlation Matricies</b></span><span class="s3"><b>¶</b></span></h3>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">Let's ensure there are no null values in our dataset, so we can produce a full correleation matrix</span></p>
+<p class="p3"><span class="s2">In [5]:</span></p>
+<p class="p8"><span class="s1">data_big</span><span class="s7">.</span><span class="s1">isnull()</span><span class="s7">.</span><span class="s1">values</span><span class="s7">.</span><span class="s1">any()</span></p>
+<p class="p10"><span class="s2">Out[5]:</span></p>
+<p class="p17"><span class="s2">False</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">Remove non-numeric features from data:</span></p>
+<p class="p3"><span class="s2">In [6]:</span></p>
+<p class="p5"><span class="s6"><b>def</b></span><span class="s4"> </span><span class="s1">getNumericDataframe</span><span class="s4">(data):</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>non_numeric </span><span class="s7">=</span><span class="s1"> []</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6"><b>for</b></span><span class="s1"> col </span><span class="s9"><b>in</b></span><span class="s1"> data</span><span class="s7">.</span><span class="s1">columns</span><span class="s7">.</span><span class="s1">tolist():</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>data_type </span><span class="s7">=</span><span class="s1"> data[col]</span><span class="s7">.</span><span class="s1">dtype</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6"><b>if</b></span><span class="s1"> data_type </span><span class="s7">==</span><span class="s1"> np</span><span class="s7">.</span><span class="s1">dtype(</span><span class="s8">'O'</span><span class="s1">):</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">            </span>non_numeric</span><span class="s7">.</span><span class="s1">append(col)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6"><b>return</b></span><span class="s1"> data</span><span class="s7">.</span><span class="s1">drop(non_numeric, axis</span><span class="s7">=1</span><span class="s1">)</span></p>
+<p class="p3"><span class="s2">In [7]:</span></p>
+<p class="p8"><span class="s1">data_big </span><span class="s7">=</span><span class="s1"> getNumericDataframe(data_big)</span></p>
+<p class="p8"><span class="s1">data_small </span><span class="s7">=</span><span class="s1"> getNumericDataframe(data_small)</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">Correlation matrix for <b>data_big</b>:</span></p>
+<p class="p3"><span class="s2">In [8]:</span></p>
+<p class="p8"><span class="s1">data_big</span><span class="s7">.</span><span class="s1">corr()</span></p>
+<p class="p10"><span class="s2">Out[8]:</span></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td4">
+        <p class="p11"><span class="s1"><b></b></span><br></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p12"><span class="s2"><b>Unnamed: 0</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>Age</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>G</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>GS</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>MP</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>3PAr</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>FTr</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>AST%</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>STL%</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>BLK%</b></span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p12"><span class="s2"><b>...</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>FTA</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>FT%</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>AST</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>STL</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>BLK</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>TOV</b></span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p12"><span class="s2"><b>Popularity</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>C</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>PPG</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>Allstar</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>Unnamed: 0</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.029268</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.026637</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.026898</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.048844</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.086823</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.003784</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.001132</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.063878</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.016330</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.028012</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.029906</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.012423</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.046087</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.039808</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.052524</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.413031</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.012672</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.011292</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.104952</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>Age</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.029268</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.010117</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.003263</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.013276</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.123270</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.107627</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.067787</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.048429</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.058320</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.048286</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.095012</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.043187</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.016264</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.043278</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.028829</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.041817</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.030165</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.005249</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.002540</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>G</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.026637</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.010117</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.570280</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.845661</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.089734</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.021388</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.071932</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.013151</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.103674</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.548737</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.159633</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.499356</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.668221</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.440622</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.646546</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.033394</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.063321</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.478933</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.119611</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>GS</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.026898</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.003263</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.570280</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.835597</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.170978</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.113413</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.227164</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.072170</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.102536</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.686872</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.133551</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.594087</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.706508</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.490584</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.727122</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.028414</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.070587</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.722674</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.317181</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>MP</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.048844</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.013276</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.845661</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.835597</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.105248</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.077183</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.251729</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.071235</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.044900</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.772664</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.220622</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.697274</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.831501</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.491644</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.845165</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.028222</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.014954</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.786181</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.292162</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>3PAr</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">0.086823</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.123270</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.089734</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.170978</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.105248</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.426347</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.021166</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.032165</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.484807</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.261125</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.222976</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.018817</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.043235</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.423840</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.179744</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.046802</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.475852</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.136720</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.094019</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>FTr</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">0.003784</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.107627</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.021388</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.113413</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.077183</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.426347</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.038518</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.082414</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.235619</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.431110</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.149503</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.073120</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.100286</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.252991</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.189320</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.026015</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.212389</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.173814</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.168295</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>AST%</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.001132</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.067787</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.071932</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.227164</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.251729</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.021166</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.038518</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.317698</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.332158</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.335772</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.193989</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.773511</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.401667</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.147929</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.543750</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.046396</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.219813</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.389150</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.238712</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>STL%</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.063878</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.048429</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.013151</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.072170</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.071235</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.032165</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.082414</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.317698</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.101553</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.099720</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.062964</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.248670</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.454680</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.072976</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.166756</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.072415</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.176896</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.064199</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.111201</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>BLK%</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">0.016330</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.058320</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.103674</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.102536</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.044900</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.484807</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.235619</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.332158</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.101553</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.113618</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.287367</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.185508</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.042117</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.753841</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.007240</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.001657</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.601340</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.012460</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.072166</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>TOV%</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.075896</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.013537</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.133089</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.092955</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.138134</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.125384</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.128287</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.380492</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.216373</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.009824</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.079819</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.127963</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.150307</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.006083</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.066469</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.118178</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.021200</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.056734</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.193073</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.024479</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>USG%</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.029226</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.078187</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.086683</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.296535</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.316863</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.176420</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.157226</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.440633</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.076838</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.069230</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.595752</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.231790</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.425647</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.296464</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.109290</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.546883</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.041456</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.019417</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.710613</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.367552</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>WS/48</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">0.000705</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.105108</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.473372</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.416805</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.496936</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.199581</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.257236</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.087169</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.052639</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.311270</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.521371</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.194171</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.362010</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.444935</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.420425</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.417485</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.019079</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.211679</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.525230</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.288120</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>VORP</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.035546</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.073570</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.406370</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.639257</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.646939</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.081694</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.231610</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.364574</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.238645</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.166836</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.727778</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.150923</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.648177</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.702000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.463685</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.678540</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.038137</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.071127</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.702244</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.482641</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>3P%</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">0.052582</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.037712</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.139029</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.078175</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.163878</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.473474</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.237471</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.153796</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.042077</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.288135</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.042407</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.249817</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.203736</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.171083</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.177145</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.118839</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.052462</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.329816</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.194992</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.049336</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>2P%</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">0.048088</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.005787</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.327768</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.223299</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.275680</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.273572</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.164988</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.090993</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.032853</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.338435</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.232855</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.040940</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.084127</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.203965</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.340554</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.191919</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.023458</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.258748</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.235029</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.077480</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>FTA</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.028012</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.048286</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.548737</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.686872</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.772664</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.261125</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.431110</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.335772</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.099720</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.113618</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.168665</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.655165</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.689946</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.469365</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.851731</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.022169</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.085430</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.862254</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.467994</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>FT%</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">0.029906</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.095012</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.159633</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.133551</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.220622</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.222976</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.149503</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.193989</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.062964</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.287367</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.168665</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.245753</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.161710</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.104089</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.202109</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.020993</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.156479</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.298599</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.101503</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>AST</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.012423</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.043187</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.499356</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.594087</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.697274</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.018817</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.073120</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.773511</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.248670</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.185508</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.655165</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.245753</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.755491</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.117493</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.863532</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.019050</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.143331</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.667456</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.337067</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>STL</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.046087</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.016264</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.668221</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.706508</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.831501</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.043235</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.100286</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.401667</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.454680</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.042117</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.689946</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.161710</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.755491</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.313334</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.799042</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.003590</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.098517</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.675598</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.329274</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>BLK</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.039808</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.043278</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.440622</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.490584</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.491644</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.423840</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.252991</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.147929</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.072976</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.753841</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.469365</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.104089</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.117493</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.313334</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.383001</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.001927</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.479246</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.367541</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.231615</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>TOV</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.052524</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.028829</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.646546</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.727122</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.845165</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.179744</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.189320</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.543750</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.166756</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.007240</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.851731</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.202109</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.863532</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.799042</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.383001</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.007011</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.017438</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.817325</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.385384</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>Popularity</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.413031</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.041817</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.033394</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.028414</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.028222</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.046802</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.026015</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.046396</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.072415</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.001657</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.022169</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.020993</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.019050</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.003590</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.001927</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.007011</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.023880</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.000202</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.082775</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>C</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">0.012672</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.030165</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.063321</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.070587</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.014954</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.475852</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.212389</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.219813</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.176896</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.601340</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.085430</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.156479</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.143331</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.098517</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.479246</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.017438</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.023880</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.002113</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.021269</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>PPG</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.011292</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.005249</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.478933</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.722674</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.786181</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.136720</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.173814</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.389150</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.064199</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.012460</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.862254</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.298599</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.667456</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.675598</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.367541</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.817325</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.000202</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.002113</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.467037</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>Allstar</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.104952</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.002540</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.119611</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.317181</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.292162</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.094019</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.168295</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.238712</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.111201</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.072166</span></p>
+      </td>
+      <td valign="middle" class="td3">
+        <p class="p7"><span class="s2">...</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.467994</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.101503</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.337067</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.329274</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.231615</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.385384</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.082775</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.021269</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.467037</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p7"><span class="s2">26 rows × 26 columns</span></p>
+<p class="p3"><span class="s2">In [9]:</span></p>
+<p class="p8"><span class="s1">data_small</span><span class="s7">.</span><span class="s1">corr()</span></p>
+<p class="p10"><span class="s2">Out[9]:</span></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td4">
+        <p class="p11"><span class="s1"><b></b></span><br></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p12"><span class="s2"><b>Unnamed: 0</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>GS</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>FTr</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>BLK%</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>VORP</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>3P%</b></span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p12"><span class="s2"><b>Popularity</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>C</b></span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p12"><span class="s2"><b>Allstar</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>Unnamed: 0</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.026898</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.003784</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.016330</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.035546</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.052582</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.413031</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.012672</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.104952</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>GS</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.026898</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.113413</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.102536</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.639257</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.078175</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.028414</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.070587</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.317181</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>FTr</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">0.003784</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.113413</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.235619</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.231610</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.237471</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.026015</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.212389</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.168295</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>BLK%</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">0.016330</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.102536</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.235619</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.166836</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.288135</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.001657</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.601340</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.072166</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>VORP</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.035546</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.639257</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.231610</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.166836</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.105934</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.038137</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.071127</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.482641</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>3P%</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">0.052582</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.078175</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.237471</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.288135</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.105934</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.052462</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.329816</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.049336</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>Popularity</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.413031</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.028414</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.026015</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.001657</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.038137</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.052462</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.023880</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.082775</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>C</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">0.012672</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.070587</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.212389</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.601340</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.071127</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">-0.329816</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">-0.023880</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.021269</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td4">
+        <p class="p7"><span class="s2"><b>Allstar</b></span></p>
+      </td>
+      <td valign="middle" class="td4">
+        <p class="p7"><span class="s2">-0.104952</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.317181</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.168295</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.072166</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.482641</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.049336</span></p>
+      </td>
+      <td valign="middle" class="td6">
+        <p class="p7"><span class="s2">0.082775</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">0.021269</span></p>
+      </td>
+      <td valign="middle" class="td5">
+        <p class="p7"><span class="s2">1.000000</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">Features such as <b>VORP</b>, <b>PPG</b>, and <b>TOV</b> are highley correlated with all-allstar selection.</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 21.0px; font: 22.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>Cluster Analysis</b></span><span class="s3"><b>¶</b></span></h2>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">We'll perform a cluster anlysis to see how well-seperated our 2 classes are. To start, we'll use PCA to reduce our feature sets to 2 and 3 dimensions. From there we will see how well they are structured and how seperated our two classes are among them.</span></p>
+<ul class="ul1">
+  <li class="li7"><span class="s10"></span><span class="s2">All-Stars = Grey</span></li>
+  <li class="li7"><span class="s10"></span><span class="s2">Non-All-Stars = Red</span></li>
+</ul>
+<p class="p7"><span class="s2">If you're running this as a notebook on your machine, you can pan around the 3-dimensional plots.</span></p>
+<p class="p3"><span class="s2">In [10]:</span></p>
+<p class="p8"><span class="s6"><b>def</b></span><span class="s1"> </span><span class="s5">pcaCluster</span><span class="s1">(X, dimension):</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>acceptable_dims </span><span class="s7">=</span><span class="s1"> [</span><span class="s7">2</span><span class="s1">, </span><span class="s7">3</span><span class="s1">]</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6"><b>if</b></span><span class="s1"> dimension </span><span class="s9"><b>not</b></span><span class="s1"> </span><span class="s9"><b>in</b></span><span class="s1"> acceptable_dims:</span></p>
+<p class="p14"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s6">print</span><span class="s4">(</span><span class="s1">'Only capable of 2D or 3D'</span><span class="s4">)</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>pca </span><span class="s7">=</span><span class="s1"> PCA(n_components</span><span class="s7">=</span><span class="s1">dimension)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>pca</span><span class="s7">.</span><span class="s1">fit(X</span><span class="s7">.</span><span class="s1">transpose())</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>reduced </span><span class="s7">=</span><span class="s1"> pd</span><span class="s7">.</span><span class="s1">DataFrame(pca</span><span class="s7">.</span><span class="s1">components_</span><span class="s7">.</span><span class="s1">transpose())</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6"><b>if</b></span><span class="s1"> dimension </span><span class="s7">==</span><span class="s1"> </span><span class="s7">2</span><span class="s1">:</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>reduced</span><span class="s7">.</span><span class="s1">columns </span><span class="s7">=</span><span class="s1"> [</span><span class="s8">'x'</span><span class="s1">, </span><span class="s8">'y'</span><span class="s1">]</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>reduced[</span><span class="s8">'label'</span><span class="s1">] </span><span class="s7">=</span><span class="s1"> y</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">%</span><span class="s6"><b>matplotlib</b></span><span class="s1"> inline</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>plt</span><span class="s7">.</span><span class="s1">figure(figsize</span><span class="s7">=</span><span class="s1">(</span><span class="s7">10</span><span class="s1">, </span><span class="s7">7</span><span class="s1">))</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>plt</span><span class="s7">.</span><span class="s1">scatter(reduced</span><span class="s7">.</span><span class="s1">x, reduced</span><span class="s7">.</span><span class="s1">y, c</span><span class="s7">=</span><span class="s1">reduced</span><span class="s7">.</span><span class="s1">label, s</span><span class="s7">=50</span><span class="s1">, cmap</span><span class="s7">=</span><span class="s8">'Set1'</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>plt</span><span class="s7">.</span><span class="s1">colorbar()</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6"><b>if</b></span><span class="s1"> dimension </span><span class="s7">==</span><span class="s1"> </span><span class="s7">3</span><span class="s1">:</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>reduced</span><span class="s7">.</span><span class="s1">columns </span><span class="s7">=</span><span class="s1"> [</span><span class="s8">'x'</span><span class="s1">, </span><span class="s8">'y'</span><span class="s1">, </span><span class="s8">'z'</span><span class="s1">]</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>reduced[</span><span class="s8">'label'</span><span class="s1">] </span><span class="s7">=</span><span class="s1"> y</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">%</span><span class="s6"><b>matplotlib</b></span><span class="s1"> notebook</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>fig </span><span class="s7">=</span><span class="s1"> plt</span><span class="s7">.</span><span class="s1">figure()</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>plt</span><span class="s7">.</span><span class="s1">rcParams[</span><span class="s8">'figure.figsize'</span><span class="s1">]</span><span class="s7">=</span><span class="s1">(</span><span class="s7">7</span><span class="s1">,</span><span class="s7">7</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>ax </span><span class="s7">=</span><span class="s1"> fig</span><span class="s7">.</span><span class="s1">add_subplot(</span><span class="s7">111</span><span class="s1">, projection</span><span class="s7">=</span><span class="s8">'3d'</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>p </span><span class="s7">=</span><span class="s1"> ax</span><span class="s7">.</span><span class="s1">scatter(reduced[</span><span class="s8">'x'</span><span class="s1">], reduced[</span><span class="s8">'y'</span><span class="s1">], reduced[</span><span class="s8">'z'</span><span class="s1">], c</span><span class="s7">=</span><span class="s1">reduced[</span><span class="s8">'label'</span><span class="s1">], cmap</span><span class="s7">=</span><span class="s8">'Set1'</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>fig</span><span class="s7">.</span><span class="s1">colorbar(p)</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>2D PCA Clustering for data_big</b></span><span class="s3"><b>¶</b></span></h4>
+<p class="p3"><span class="s2">In [11]:</span></p>
+<p class="p8"><span class="s1">pcaCluster(data_big, </span><span class="s7">2</span><span class="s1">)</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"><img src="file:///unknown_1.png" alt="unknown_1.png"></span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>3D PCA Clustering for data_big</b></span><span class="s3"><b>¶</b></span></h4>
+<p class="p3"><span class="s2">In [30]:</span></p>
+<p class="p4"><span class="s7">%</span><span class="s1"><b>matplotlib</b></span><span class="s4"> notebook</span></p>
+<p class="p8"><span class="s1">plt</span><span class="s7">.</span><span class="s1">rcParams[</span><span class="s8">'figure.figsize'</span><span class="s1">]</span><span class="s7">=</span><span class="s1">(</span><span class="s7">10</span><span class="s1">,</span><span class="s7">7</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1">pcaCluster(data_big, </span><span class="s7">3</span><span class="s1">)</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p19"><span class="s1"></span><br></p>
+<p class="p19"><span class="s1"></span><br></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"><img src="file:///unknown_2.png" alt="unknown_2.png"></span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">Our more expansive dataset appears extrememly structured in 2D. All players create a near-perfect square while all-stars tend to reside on one of it's sides. In 3D our data has more dispersion. Many players reside on a thin plane while many othes sprawl out above that plane. All-stars are above and to one specific side of the plane.</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>2D PCA Clustering for data_small</b></span><span class="s3"><b>¶</b></span></h4>
+<p class="p3"><span class="s2">In [32]:</span></p>
+<p class="p4"><span class="s7">%</span><span class="s1"><b>matplotlib</b></span><span class="s4"> inline</span></p>
+<p class="p8"><span class="s1">plt</span><span class="s7">.</span><span class="s1">figure(figsize</span><span class="s7">=</span><span class="s1">(</span><span class="s7">10</span><span class="s1">, </span><span class="s7">10</span><span class="s1">))</span></p>
+<p class="p8"><span class="s1">pcaCluster(data_small, </span><span class="s7">2</span><span class="s1">)</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"><img src="file:///unknown_3.png" alt="unknown_3.png"></span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>3D PCA Clustering for data_small</b></span><span class="s3"><b>¶</b></span></h4>
+<p class="p3"><span class="s2">In [34]:</span></p>
+<p class="p4"><span class="s7">%</span><span class="s1"><b>matplotlib</b></span><span class="s4"> notebook</span></p>
+<p class="p8"><span class="s1">plt</span><span class="s7">.</span><span class="s1">rcParams[</span><span class="s8">'figure.figsize'</span><span class="s1">]</span><span class="s7">=</span><span class="s1">(</span><span class="s7">10</span><span class="s1">,</span><span class="s7">7</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1">pcaCluster(data_big, </span><span class="s7">3</span><span class="s1">)</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p19"><span class="s1"></span><br></p>
+<p class="p19"><span class="s1"></span><br></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"><img src="file:///unknown_2.png" alt="unknown_2.png"></span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">Our less expansive dataset seems to have similar characteristics when decomposed and plotted. There is definitley less structure, most likely due to there being less colinearity between features. However, our two classes seem to be less seperated with this smaller dataset.</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 18.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>PCA Analysis</b></span><span class="s3"><b>¶</b></span></h3>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">Because of these results, using dimensionality reduction for condensing our feature set might be tricky. Let's see what the loss of explained variance is for each dimension we drop:</span></p>
+<p class="p3"><span class="s2">In [15]:</span></p>
+<p class="p5"><span class="s6"><b>def</b></span><span class="s4"> </span><span class="s1">plotExplainedVariance</span><span class="s4">(X):</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">%</span><span class="s6"><b>matplotlib</b></span><span class="s1"> inline</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>plt</span><span class="s7">.</span><span class="s1">figure(figsize</span><span class="s7">=</span><span class="s1">(</span><span class="s7">10</span><span class="s1">, </span><span class="s7">5</span><span class="s1">))</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>pca </span><span class="s7">=</span><span class="s1"> PCA()</span><span class="s7">.</span><span class="s1">fit(X)</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>explained_var </span><span class="s7">=</span><span class="s1"> </span><span class="s6">list</span><span class="s1">(np</span><span class="s7">.</span><span class="s1">cumsum(pca</span><span class="s7">.</span><span class="s1">explained_variance_ratio_))</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>dimensions </span><span class="s7">=</span><span class="s1"> </span><span class="s6">list</span><span class="s1">(</span><span class="s6">range</span><span class="s1">(</span><span class="s7">1</span><span class="s1">, X</span><span class="s7">.</span><span class="s1">shape[</span><span class="s7">1</span><span class="s1">]</span><span class="s7">+1</span><span class="s1">))</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>dimensions </span><span class="s7">=</span><span class="s1"> np</span><span class="s7">.</span><span class="s1">array(</span><span class="s6">list</span><span class="s1">(</span><span class="s6">range</span><span class="s1">(</span><span class="s7">1</span><span class="s1">, X</span><span class="s7">.</span><span class="s1">shape[</span><span class="s7">1</span><span class="s1">]</span><span class="s7">+1</span><span class="s1">)))</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>plt</span><span class="s7">.</span><span class="s1">plot(dimensions, explained_var)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>plt</span><span class="s7">.</span><span class="s1">xlabel(</span><span class="s8">'n_dimensions'</span><span class="s1">)</span></p>
+<p class="p14"><span class="s4"><span class="Apple-converted-space">    </span>plt</span><span class="s7">.</span><span class="s4">ylabel(</span><span class="s1">'cumulative explained variance'</span><span class="s4">)</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">Explained variance for <b>data_big</b>:</span></p>
+<p class="p3"><span class="s2">In [16]:</span></p>
+<p class="p8"><span class="s1">plotExplainedVariance(X_big)</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"><img src="file:///unknown_4.png" alt="unknown_4.png"></span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">Explained variance for <b>data_small</b>:</span></p>
+<p class="p3"><span class="s2">In [17]:</span></p>
+<p class="p8"><span class="s1">plotExplainedVariance(X_small)</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"><img src="file:///unknown_5.png" alt="unknown_5.png"></span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">The explained variance plots for both our datasets are very steep. We can decompose <b>data_big</b> from 24 to 4 dimensions and <b>data_small</b> from 7 to 2 dimensions and still retain the vast majority of explained variance.</span></p>
+<p class="p7"><span class="s2">However, PCA makes the assumption that our features have linear relationships with eachother. This is most likely not the case, our features are most likey related to each other in much more complecated ways.</span></p>
+<p class="p7"><span class="s2">With this, we should try using a manifold method dimensionality reduction. This will allow us to ditch the naive linear assumption, but will also deprive of explained variance knowledge. Let's decompose our feature sets using isometric mapping and then analyze them:</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 18.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>Isometric Mapping Analysis</b></span><span class="s3"><b>¶</b></span></h3>
+<p class="p3"><span class="s2">In [24]:</span></p>
+<p class="p8"><span class="s6"><b>def</b></span><span class="s1"> </span><span class="s5">isometricMap</span><span class="s1">(X, dimension): <span class="Apple-converted-space">   </span></span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>acceptable_dims </span><span class="s7">=</span><span class="s1"> [</span><span class="s7">2</span><span class="s1">, </span><span class="s7">3</span><span class="s1">]</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6"><b>if</b></span><span class="s1"> dimension </span><span class="s9"><b>not</b></span><span class="s1"> </span><span class="s9"><b>in</b></span><span class="s1"> acceptable_dims:</span></p>
+<p class="p14"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s6">print</span><span class="s4">(</span><span class="s1">'Only capable of 2D or 3D'</span><span class="s4">)</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>isomap </span><span class="s7">=</span><span class="s1"> Isomap(n_components</span><span class="s7">=</span><span class="s1">dimension)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span>isomap </span><span class="s7">=</span><span class="s1"> pd</span><span class="s7">.</span><span class="s1">DataFrame(isomap</span><span class="s7">.</span><span class="s1">fit_transform(X))</span></p>
+<p class="p9"><span class="s1"></span><br></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6"><b>if</b></span><span class="s1"> dimension </span><span class="s7">==</span><span class="s1"> </span><span class="s7">2</span><span class="s1">:</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>isomap</span><span class="s7">.</span><span class="s1">columns </span><span class="s7">=</span><span class="s1"> [</span><span class="s8">'x'</span><span class="s1">, </span><span class="s8">'y'</span><span class="s1">]</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>isomap[</span><span class="s8">'label'</span><span class="s1">] </span><span class="s7">=</span><span class="s1"> y</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">%</span><span class="s6"><b>matplotlib</b></span><span class="s1"> inline</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>plt</span><span class="s7">.</span><span class="s1">figure(figsize</span><span class="s7">=</span><span class="s1">(</span><span class="s7">10</span><span class="s1">, </span><span class="s7">10</span><span class="s1">))</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>plt</span><span class="s7">.</span><span class="s1">scatter(isomap</span><span class="s7">.</span><span class="s1">x, isomap</span><span class="s7">.</span><span class="s1">y, c</span><span class="s7">=</span><span class="s1">isomap</span><span class="s7">.</span><span class="s1">label, s</span><span class="s7">=50</span><span class="s1">, cmap</span><span class="s7">=</span><span class="s8">'Set1'</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>plt</span><span class="s7">.</span><span class="s1">colorbar()</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s6"><b>if</b></span><span class="s1"> dimension </span><span class="s7">==</span><span class="s1"> </span><span class="s7">3</span><span class="s1">:</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>isomap</span><span class="s7">.</span><span class="s1">columns </span><span class="s7">=</span><span class="s1"> [</span><span class="s8">'x'</span><span class="s1">, </span><span class="s8">'y'</span><span class="s1">, </span><span class="s8">'z'</span><span class="s1">]</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>isomap[</span><span class="s8">'label'</span><span class="s1">] </span><span class="s7">=</span><span class="s1"> y</span></p>
+<p class="p9"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">%</span><span class="s6"><b>matplotlib</b></span><span class="s1"> notebook</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>fig </span><span class="s7">=</span><span class="s1"> plt</span><span class="s7">.</span><span class="s1">figure()</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>plt</span><span class="s7">.</span><span class="s1">rcParams[</span><span class="s8">'figure.figsize'</span><span class="s1">]</span><span class="s7">=</span><span class="s1">(</span><span class="s7">7</span><span class="s1">,</span><span class="s7">7</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>ax </span><span class="s7">=</span><span class="s1"> fig</span><span class="s7">.</span><span class="s1">add_subplot(</span><span class="s7">111</span><span class="s1">, projection</span><span class="s7">=</span><span class="s8">'3d'</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>p </span><span class="s7">=</span><span class="s1"> ax</span><span class="s7">.</span><span class="s1">scatter(isomap[</span><span class="s8">'x'</span><span class="s1">], isomap[</span><span class="s8">'y'</span><span class="s1">], isomap[</span><span class="s8">'z'</span><span class="s1">], c</span><span class="s7">=</span><span class="s1">isomap[</span><span class="s8">'label'</span><span class="s1">], cmap</span><span class="s7">=</span><span class="s8">'Set1'</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span>fig</span><span class="s7">.</span><span class="s1">colorbar(p)</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>2D IsoMap Clustering for data_big:</b></span><span class="s3"><b>¶</b></span></h4>
+<p class="p3"><span class="s2">In [35]:</span></p>
+<p class="p4"><span class="s7">%</span><span class="s1"><b>matplotlib</b></span><span class="s4"> inline</span></p>
+<p class="p8"><span class="s1">plt</span><span class="s7">.</span><span class="s1">figure(figsize</span><span class="s7">=</span><span class="s1">(</span><span class="s7">7</span><span class="s1">, </span><span class="s7">7</span><span class="s1">))</span></p>
+<p class="p8"><span class="s1">isometricMap(data_big, </span><span class="s7">2</span><span class="s1">)</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"><img src="file:///unknown_6.png" alt="unknown_6.png"></span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>3D IsoMap Clustering for data_big:</b></span><span class="s3"><b>¶</b></span></h4>
+<p class="p3"><span class="s2">In [38]:</span></p>
+<p class="p4"><span class="s7">%</span><span class="s1"><b>matplotlib</b></span><span class="s4"> notebook</span></p>
+<p class="p8"><span class="s1">plt</span><span class="s7">.</span><span class="s1">rcParams[</span><span class="s8">'figure.figsize'</span><span class="s1">]</span><span class="s7">=</span><span class="s1">(</span><span class="s7">10</span><span class="s1">,</span><span class="s7">7</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1">isometricMap(data_big, </span><span class="s7">3</span><span class="s1">)</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p19"><span class="s1"></span><br></p>
+<p class="p19"><span class="s1"></span><br></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"><img src="file:///unknown_7.png" alt="unknown_7.png"></span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>2D IsoMap Clustering for data_small</b></span><span class="s3"><b>¶</b></span></h4>
+<p class="p3"><span class="s2">In [39]:</span></p>
+<p class="p4"><span class="s7">%</span><span class="s1"><b>matplotlib</b></span><span class="s4"> inline</span></p>
+<p class="p8"><span class="s1">plt</span><span class="s7">.</span><span class="s1">figure(figsize</span><span class="s7">=</span><span class="s1">(</span><span class="s7">7</span><span class="s1">, </span><span class="s7">7</span><span class="s1">))</span></p>
+<p class="p8"><span class="s1">isometricMap(data_small, </span><span class="s7">2</span><span class="s1">)</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"><img src="file:///unknown_8.png" alt="unknown_8.png"></span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 14.0px 'Helvetica Neue'; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><b>3D IsoMap Clustering for data_small</b></span><span class="s3"><b>¶</b></span></h4>
+<p class="p3"><span class="s2">In [40]:</span></p>
+<p class="p4"><span class="s7">%</span><span class="s1"><b>matplotlib</b></span><span class="s4"> notebook</span></p>
+<p class="p8"><span class="s1">plt</span><span class="s7">.</span><span class="s1">rcParams[</span><span class="s8">'figure.figsize'</span><span class="s1">]</span><span class="s7">=</span><span class="s1">(</span><span class="s7">10</span><span class="s1">,</span><span class="s7">7</span><span class="s1">)</span></p>
+<p class="p8"><span class="s1">isometricMap(data_small, </span><span class="s7">3</span><span class="s1">)</span></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p19"><span class="s1"></span><br></p>
+<p class="p19"><span class="s1"></span><br></p>
+<p class="p15"><span class="s1"></span><br></p>
+<p class="p7"><span class="s1"><img src="file:///unknown_9.png" alt="unknown_9.png"></span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p7"><span class="s2">Seperation definitley seems better with isometric mapping. When we cluster with it, our data takes on a much less linear shape. Since we have seemingly better class seperation without PCA's linear assumption, it looks like our features share non-linear relationships.</span></p>
+<p class="p7"><span class="s2">Clustering alone hasn't made <b>data_big</b> or <b>data_small</b> appear to be much more superior than the other. As a result of this, we will chose which dataset to use when we start modeling.</span></p>
+</body>
+</html>

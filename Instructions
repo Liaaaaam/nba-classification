@@ -1,0 +1,19 @@
+Instructions
+
+Run .ipynb files in the following order:
+
+	1) popularity_data.ipynb
+	2) feature_engineering.ipynb
+	3) analysis.ipynb
+	4) modeling.ipynb
+
+Here are the dependencies for the .csv files:
+
+	stats_data.csv (preexisting)
+
+	popularity_data.ipynb ---> popualarity_data.csv
+
+	stats_data.csv + popularity_data.csv ---> data_big.csv, data_small.csv, full_data.csv, popularity_reference.csv
+
+	(Running the notebooks in the specified order will successfully create all of these files)
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>popularity_data</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1504.81">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; line-height: 17.0px; font: 14.0px Courier; color: #303f9f; -webkit-text-stroke: #303f9f}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #008000; -webkit-text-stroke: #008000; background-color: #f7f7f7}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #0000ff; -webkit-text-stroke: #0000ff; background-color: #f7f7f7}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #333333; -webkit-text-stroke: #333333; background-color: #f7f7f7}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #ba2121; -webkit-text-stroke: #ba2121; background-color: #f7f7f7}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #333333; -webkit-text-stroke: #333333; background-color: #f7f7f7; min-height: 17.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 17.0px; font: 14.0px Courier; color: #d2413a; -webkit-text-stroke: #d2413a; background-color: #f7f7f7}
+    span.s1 {font-kerning: none; background-color: #ffffff}
+    span.s2 {font-kerning: none}
+    span.s3 {font-kerning: none; color: #333333; -webkit-text-stroke: 0px #333333}
+    span.s4 {font-kerning: none; color: #0000ff; -webkit-text-stroke: 0px #0000ff}
+    span.s5 {font-kerning: none; color: #008000; -webkit-text-stroke: 0px #008000}
+    span.s6 {font-kerning: none; color: #666666; -webkit-text-stroke: 0px #666666}
+    span.s7 {font-kerning: none; color: #ba2121; -webkit-text-stroke: 0px #ba2121}
+    span.s8 {font-kerning: none; color: #bb6688; -webkit-text-stroke: 0px #bb6688}
+    span.s9 {font-kerning: none; color: #aa22ff; -webkit-text-stroke: 0px #aa22ff}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">In [ ]:</span></p>
+<p class="p2"><span class="s2"><b>import</b></span><span class="s3"> </span><span class="s4"><b>numpy</b></span><span class="s3"> </span><span class="s2"><b>as</b></span><span class="s3"> </span><span class="s4"><b>np</b></span></p>
+<p class="p2"><span class="s2"><b>import</b></span><span class="s3"> </span><span class="s4"><b>pandas</b></span><span class="s3"> </span><span class="s2"><b>as</b></span><span class="s3"> </span><span class="s4"><b>pd</b></span></p>
+<p class="p3"><span class="s5"><b>from</b></span><span class="s3"> </span><span class="s2"><b>pytrends.request</b></span><span class="s3"> </span><span class="s5"><b>import</b></span><span class="s3"> TrendReq</span></p>
+<p class="p1"><span class="s1">In [ ]:</span></p>
+<p class="p4"><span class="s2">pytrends </span><span class="s6">=</span><span class="s2"> TrendReq(hl</span><span class="s6">=</span><span class="s7">'en-US'</span><span class="s2">, tz</span><span class="s6">=360</span><span class="s2">)</span></p>
+<p class="p1"><span class="s1">In [ ]:</span></p>
+<p class="p5"><span class="s3">data </span><span class="s6">=</span><span class="s3"> pd</span><span class="s6">.</span><span class="s3">read_csv(</span><span class="s2">'popularity_reference.csv'</span><span class="s3">)</span></p>
+<p class="p1"><span class="s1">In [ ]:</span></p>
+<p class="p4"><span class="s2">index </span><span class="s6">=</span><span class="s2"> pd</span><span class="s6">.</span><span class="s2">DataFrame()</span></p>
+<p class="p5"><span class="s3">index[</span><span class="s2">'Player'</span><span class="s3">] </span><span class="s6">=</span><span class="s3"> data[</span><span class="s2">'Player'</span><span class="s3">]</span></p>
+<p class="p4"><span class="s2">index[</span><span class="s7">'Year'</span><span class="s2">] </span><span class="s6">=</span><span class="s2"> data[</span><span class="s7">'Year'</span><span class="s2">]</span></p>
+<p class="p4"><span class="s2">index[</span><span class="s7">'Popularity'</span><span class="s2">] </span><span class="s6">=</span><span class="s2"> pd</span><span class="s6">.</span><span class="s2">Series()</span></p>
+<p class="p1"><span class="s1">In [ ]:</span></p>
+<p class="p4"><span class="s2">data </span><span class="s6">=</span><span class="s2"> data[data[</span><span class="s7">'Year'</span><span class="s2">] </span><span class="s6">&gt;=</span><span class="s2"> </span><span class="s6">2013</span><span class="s2">]</span></p>
+<p class="p1"><span class="s1">In [ ]:</span></p>
+<p class="p4"><span class="s2">players </span><span class="s6">=</span><span class="s2"> index[</span><span class="s7">'Player'</span><span class="s2">]</span><span class="s6">.</span><span class="s2">tolist()</span></p>
+<p class="p4"><span class="s2">players </span><span class="s6">=</span><span class="s2"> </span><span class="s5">set</span><span class="s2">(players)</span></p>
+<p class="p4"><span class="s2">players </span><span class="s6">=</span><span class="s2"> </span><span class="s5">list</span><span class="s2">(players)</span></p>
+<p class="p1"><span class="s1">In [ ]:</span></p>
+<p class="p3"><span class="s5"><b>def</b></span><span class="s3"> </span><span class="s2">getPopularity</span><span class="s3">(player):</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>kw_list </span><span class="s6">=</span><span class="s2"> [player]</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>pytrends</span><span class="s6">.</span><span class="s2">build_payload(kw_list, timeframe</span><span class="s6">=</span><span class="s7">'all'</span><span class="s2">, geo</span><span class="s6">=</span><span class="s7">'US'</span><span class="s2">)</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>df </span><span class="s6">=</span><span class="s2"> pytrends</span><span class="s6">.</span><span class="s2">interest_over_time()</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>df </span><span class="s6">=</span><span class="s2"> df</span><span class="s6">.</span><span class="s2">reset_index()</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>df[</span><span class="s7">'date'</span><span class="s2">] </span><span class="s6">=</span><span class="s2"> df[</span><span class="s7">'date'</span><span class="s2">]</span><span class="s6">.</span><span class="s2">apply(</span><span class="s5"><b>lambda</b></span><span class="s2"> x: x</span><span class="s6">.</span><span class="s2">strftime(</span><span class="s7">'%Y.%m.</span><span class="s8"><b>%d</b></span><span class="s7">'</span><span class="s2">))</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>df[</span><span class="s7">'date'</span><span class="s2">] </span><span class="s6">=</span><span class="s2"> df[</span><span class="s7">'date'</span><span class="s2">]</span><span class="s6">.</span><span class="s2">apply(</span><span class="s5"><b>lambda</b></span><span class="s2"> x: x[:</span><span class="s6">4</span><span class="s2">])</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>df </span><span class="s6">=</span><span class="s2"> df</span><span class="s6">.</span><span class="s2">groupby(</span><span class="s7">'date'</span><span class="s2">)[kw_list[</span><span class="s6">0</span><span class="s2">]]</span><span class="s6">.</span><span class="s2">sum()</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>df </span><span class="s6">=</span><span class="s2"> df</span><span class="s6">.</span><span class="s2">reset_index()</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>df</span><span class="s6">.</span><span class="s2">columns </span><span class="s6">=</span><span class="s2"> [</span><span class="s7">'Year'</span><span class="s2">, </span><span class="s7">'Popularity'</span><span class="s2">]</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>df[</span><span class="s7">'Player'</span><span class="s2">] </span><span class="s6">=</span><span class="s2"> kw_list[</span><span class="s6">0</span><span class="s2">]</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s5"><b>return</b></span><span class="s2"> df</span></p>
+<p class="p1"><span class="s1">In [ ]:</span></p>
+<p class="p4"><span class="s2">popularity_dict </span><span class="s6">=</span><span class="s2"> {}</span></p>
+<p class="p4"><span class="s5"><b>for</b></span><span class="s2"> player </span><span class="s9"><b>in</b></span><span class="s2"> players:</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>popularity_dict[player] </span><span class="s6">=</span><span class="s2"> getPopularity(player)</span></p>
+<p class="p6"><span class="s2"></span><br></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s5"><b>try</b></span><span class="s2">:</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span>df </span><span class="s6">=</span><span class="s2"> pd</span><span class="s6">.</span><span class="s2">DataFrame()</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span>df[</span><span class="s7">'Year'</span><span class="s2">] </span><span class="s6">=</span><span class="s2"> pd</span><span class="s6">.</span><span class="s2">Series()</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span>df[</span><span class="s7">'Popularity'</span><span class="s2">] </span><span class="s6">=</span><span class="s2"> pd</span><span class="s6">.</span><span class="s2">Series()</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span>df[</span><span class="s7">'Player'</span><span class="s2">] </span><span class="s6">=</span><span class="s2"> pd</span><span class="s6">.</span><span class="s2">Series()</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s5"><b>for</b></span><span class="s2"> x </span><span class="s9"><b>in</b></span><span class="s2"> </span><span class="s5">list</span><span class="s2">(popularity_dict):</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span>df </span><span class="s6">=</span><span class="s2"> pd</span><span class="s6">.</span><span class="s2">concat([df, popularity_dict[x]], axis</span><span class="s6">=0</span><span class="s2">, join</span><span class="s6">=</span><span class="s7">'outer'</span><span class="s2">, join_axes</span><span class="s6">=</span><span class="s5"><b>None</b></span><span class="s2">, ignore_index</span><span class="s6">=</span><span class="s5"><b>False</b></span><span class="s2">,</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">                  </span>keys</span><span class="s6">=</span><span class="s5"><b>None</b></span><span class="s2">, levels</span><span class="s6">=</span><span class="s5"><b>None</b></span><span class="s2">, names</span><span class="s6">=</span><span class="s5"><b>None</b></span><span class="s2">, verify_integrity</span><span class="s6">=</span><span class="s5"><b>False</b></span><span class="s2">,</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">                  </span>copy</span><span class="s6">=</span><span class="s5"><b>True</b></span><span class="s2">)</span></p>
+<p class="p7"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s5"><b>except</b></span><span class="s3"> </span><span class="s2"><b>KeyError</b></span><span class="s3">:</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s5"><b>continue</b></span><span class="s2"> <span class="Apple-converted-space">   </span></span></p>
+<p class="p1"><span class="s1">In [ ]:</span></p>
+<p class="p5"><span class="s3">df</span><span class="s6">.</span><span class="s3">to_csv(</span><span class="s2">'popularity_data'</span><span class="s3">)</span></p>
+</body>
+</html>
